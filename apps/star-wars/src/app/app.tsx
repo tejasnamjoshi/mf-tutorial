@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 import './app.scss';
+import { loadRemoteModule } from '@dynamic-mfe';
 
-const Films = React.lazy(() => import('films/Module'));
+const Films = React.lazy(() => loadRemoteModule('films', './Module'));
 
-const Planets = React.lazy(() => import('planets/Module'));
+const Planets = React.lazy(() => loadRemoteModule('planets', './Module'));
 
 export function App() {
   return (

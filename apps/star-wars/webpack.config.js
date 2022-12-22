@@ -1,13 +1,24 @@
-// @ts-check
+const withModuleFederation = require('@nrwl/react/module-federation');
+const moduleFederationConfig = require('./module-federation.config');
 
-const { withModuleFederation } = require('@nrwl/react/module-federation');
-const baseConfig = require('./module-federation.config');
+const coreLibraries = new Set([
+  'react',
+  'react-dom',
+  'react-router-dom',
+  '@dynamic-mfe',
+]);
 
-/**
- * @type {import('@nrwl/devkit').ModuleFederationConfig}
- **/
-const defaultConfig = {
-  ...baseConfig,
-};
+module.exports = withModuleFederation({
+  ...moduleFederationConfig,
+  shared: (libraryName, defaultConfig) => {
+    if (coreLibraries.has(libraryName)) {
+      return {
+        ...defaultConfig,
+        eager: true,
+      };
+    }
 
-module.exports = withModuleFederation(defaultConfig);
+    // Returning false means the library is not shared.
+    return false;
+  },
+});

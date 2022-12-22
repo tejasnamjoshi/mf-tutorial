@@ -9,7 +9,7 @@ export function App() {
 
   useEffect(() => {
     (async() => {
-      const res = await fetch('https://swapi.dev/api/films');
+      const res = await fetch('https://swapi.py4e.com/api/films');
       const data = await res.json();
 
       setFilms(data.results.map((result: any) => ({ key: result.episode_id, content: result.title })));

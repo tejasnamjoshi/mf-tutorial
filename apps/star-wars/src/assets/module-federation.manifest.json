@@ -1,0 +1,5 @@
+{
+  "planets": "http://localhost:4201",
+  "films": "http://localhost:4202",
+  "new-ui": "http://localhost:4203"
+}

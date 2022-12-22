@@ -8,6 +8,7 @@ const moduleFederationConfig = {
   exposes: {
     './Module': './src/remote-entry.ts',
   },
+  remotes: []
 };
 
 module.exports = moduleFederationConfig;

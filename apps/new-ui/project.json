@@ -1,0 +1,91 @@
+{
+  "name": "new-ui",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/new-ui/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/new-ui",
+        "index": "apps/new-ui/src/index.html",
+        "baseHref": "/",
+        "main": "apps/new-ui/src/main.ts",
+        "polyfills": "apps/new-ui/src/polyfills.ts",
+        "tsConfig": "apps/new-ui/tsconfig.app.json",
+        "assets": ["apps/new-ui/src/favicon.ico", "apps/new-ui/src/assets"],
+        "styles": ["apps/new-ui/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "apps/new-ui/webpack.config.js"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/new-ui/src/environments/environment.ts",
+              "with": "apps/new-ui/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "webpackConfig": "apps/new-ui/webpack.config.prod.js"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/react:module-federation-dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "new-ui:build",
+        "hmr": true,
+        "port": 4203
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "new-ui:build:development"
+        },
+        "production": {
+          "buildTarget": "new-ui:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/new-ui/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "serve-static": {
+      "executor": "@nrwl/web:file-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "new-ui:build",
+        "port": 4203
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "new-ui:build:development"
+        },
+        "production": {
+          "buildTarget": "new-ui:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}

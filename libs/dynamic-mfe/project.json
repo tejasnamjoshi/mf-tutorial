@@ -1,0 +1,26 @@
+{
+  "name": "dynamic-mfe",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/dynamic-mfe/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/dynamic-mfe",
+        "main": "libs/dynamic-mfe/src/index.ts",
+        "tsConfig": "libs/dynamic-mfe/tsconfig.lib.json",
+        "assets": ["libs/dynamic-mfe/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/dynamic-mfe/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

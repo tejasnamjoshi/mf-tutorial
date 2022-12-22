@@ -1,8 +1,10 @@
+import { loadRemoteModule } from '@dynamic-mfe';
 import { filmAtom } from '@store';
-import { Ui } from '@ui';
 import { useAtomValue } from 'jotai';
-import { useEffect, useState } from 'react';
+import { lazy, useEffect, useState } from 'react';
 import './app.scss';
+
+const NewUI = lazy(() => loadRemoteModule('new-ui','./Ui'));
 
 interface Planet {
   content: string;
@@ -14,7 +16,7 @@ export function App() {
   const films = useAtomValue(filmAtom);
   useEffect(() => {
     (async() => {
-      const res = await fetch('https://swapi.dev/api/planets')
+      const res = await fetch('https://swapi.py4e.com/api/planets')
       const data = await res.json();
       setPlanets(data.results.map((result: any) => ({ key: result.url, content: result.name })))
     })();
@@ -24,9 +26,9 @@ export function App() {
   return (
     <div className="Planets">
       PLANETS
-      <Ui data={planets} />
+      <NewUI data={planets} />
       FILMS
-      <Ui data={films} />
+      <NewUI data={films} />
     </div>
   );
 }
