@@ -1,0 +1,15 @@
+#root {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  place-content: center;
+  height: 100vh;
+  max-width: 800px;
+  margin: auto;
+}
+
+.nav {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  gap: 2rem;
+}
