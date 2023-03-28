@@ -1,0 +1,31 @@
+.header-container {
+  position: sticky;
+  height: 5rem;
+  border-bottom: 1px solid lightgrey;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+.header-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+

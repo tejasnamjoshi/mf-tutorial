@@ -2,15 +2,11 @@ import Footer from '../components/footer/footer';
 import Header from '../components/header/header';
 import './app.scss';
 
-// Header
-// Main
-// Footer
-
 export function App() {
   return (
-      <div>
+      <div className='app'>
         <Header />
-        <main>
+        <main className='main-content'>
           This is main
         </main>
         <Footer />
