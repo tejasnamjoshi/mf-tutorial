@@ -1,13 +1,10 @@
 import './footer.scss';
 
-/* eslint-disable-next-line */
-export interface FooterProps {}
-
-export function Footer(props: FooterProps) {
+export function Footer() {
   return (
-    <div>
-      <h1>Welcome to Footer!</h1>
-    </div>
+      <footer>
+        This is the footer
+      </footer>
   );
 }
 
