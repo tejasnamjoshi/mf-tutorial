@@ -1,12 +1,20 @@
+import Footer from '../components/footer/footer';
+import Header from '../components/header/header';
 import './app.scss';
-import NxWelcome from './nx-welcome';
+
+// Header
+// Main
+// Footer
 
 export function App() {
   return (
-    <>
-      <NxWelcome title="task-breakdown-demo" />
-      <div />
-    </>
+      <div>
+        <Header />
+        <main>
+          This is main
+        </main>
+        <Footer />
+      </div>
   );
 }
 
