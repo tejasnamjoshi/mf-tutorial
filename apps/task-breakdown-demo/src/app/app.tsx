@@ -1,5 +1,6 @@
 import Footer from '../components/footer/footer';
 import Header from '../components/header/header';
+import ImageRenderer from '../components/image-renderer/image-renderer';
 import './app.scss';
 
 export function App() {
@@ -7,7 +8,7 @@ export function App() {
       <div className='app'>
         <Header />
         <main className='main-content'>
-          This is main
+          <ImageRenderer />
         </main>
         <Footer />
       </div>
