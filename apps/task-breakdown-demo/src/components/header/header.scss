@@ -1,14 +1,22 @@
 .header-container {
   position: sticky;
+  top: 0;
+  z-index: 9;
   height: 5rem;
   border-bottom: 1px solid lightgrey;
+  display: flex;
+  background: transparent;
+  backdrop-filter: blur(5px);
 }
 
 .header {
   display: flex;
   justify-content: space-between;
+  flex-grow: 1;
+  flex-shrink: 0;
   max-width: 1200px;
   margin: auto;
+  padding: 1rem;
 }
 
 .header-right {
