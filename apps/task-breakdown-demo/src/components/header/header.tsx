@@ -1,3 +1,4 @@
+import Button from '../button/button';
 import './header.scss';
 
 export function Header() {
@@ -20,8 +21,8 @@ export function Header() {
             </ul>
           </nav>
           <div className="header-buttons">
-            <button>Login</button>
-            <button>Sign up</button>
+            <Button>Login</Button>
+            <Button>Sign up</Button>
           </div>
         </div>
       </header>
