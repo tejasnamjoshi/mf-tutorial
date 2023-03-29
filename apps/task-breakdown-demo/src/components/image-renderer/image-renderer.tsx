@@ -5,7 +5,7 @@ export function ImageRenderer() {
 
   const components = [];
   for (let index = 0; index < 20; index++) {
-    components.push(<Image index={index * 10} />);
+    components.push(<Image index={index * 10} key={index} />);
   }
 
   return (

@@ -5,7 +5,7 @@ export function Header() {
   return (
     <div className="header-container">
       <header className="header">
-        <h1>Title</h1>
+        <h1>Task Breakdown</h1>
         <div className="header-right">
           <nav className="navbar">
             <ul>

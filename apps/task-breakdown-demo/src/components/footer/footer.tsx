@@ -2,9 +2,9 @@ import './footer.scss';
 
 export function Footer() {
   return (
-      <footer>
-        This is the footer
-      </footer>
+    <footer>
+      <h1>This is the footer</h1>
+    </footer>
   );
 }
 
